@@ -22,8 +22,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $blogs = Blog::where('author', '=', $request->user()->name)->get();
+        return view('home', ['blogs' => $blogs]);
     }
 }

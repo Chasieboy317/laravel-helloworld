@@ -12,7 +12,7 @@ class BlogController extends Controller
   }
 
   public function create(Request $request) {
-    $author = $request->user()->name();
+    $author = $request->user()->name;
     $title = $request->input('title');
     $body = $request->input('body');
 
