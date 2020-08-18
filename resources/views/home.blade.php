@@ -11,9 +11,9 @@
 
 @foreach ($blogs as $blog)
   <div class="card">
-      <div class="card-header"><a href="/blog/{{ $blog->id }}">{{ $blog->title }}</a></div>
       <div class="card-body">
-        {{ $blog->body }}
+        <h4 class="card-title"><a href="/blog/{{ $blog->id }}">{{ $blog->title }}</a></h4>
+        <p class="card-text">{{ $blog->body }}</p>
       </div>
   </div>
 @endforeach
