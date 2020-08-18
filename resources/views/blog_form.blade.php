@@ -13,6 +13,7 @@
     <label>Body</label>
     <textarea name="body" rows="6" placeholder="Your blog post text here" class="form-control" required></textarea>
   </div>
+  <button type="submit" class="btn btn-primary">Create blog</button>
 </form>
 
 @endsection
