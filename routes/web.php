@@ -15,14 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::view('/login', 'login');
-
-Route::view('/register', 'register');
-
 Route::get('/blogs', 'BlogPopulateController@show');
 
 Route::get('/blog/{id}', 'BlogController@show');
 
-Route::post('/login', 'LoginController@show');
+Auth::routes();
 
-Route::post('/register', 'RegisterController@show');
+Route::get('/home', 'HomeController@index')->name('home');

@@ -1,5 +1,4 @@
 views:
-login page
 register page
 my blogs page
 all blogs page
@@ -13,6 +12,7 @@ routes:
 /blog/{id}
 /blogs
 
+implement auth
 
 database:
 session
