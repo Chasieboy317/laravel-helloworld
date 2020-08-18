@@ -5,6 +5,7 @@
 @section('content')
 
 <form method="post" action="{{ route('create_blog') }}">
+  @csrf
   <div class="form-group">
     <label>Title</label>
     <input name="title" type="text" placeholder="Blog title here" class="form-control" required>
