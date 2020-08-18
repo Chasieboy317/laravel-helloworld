@@ -1,0 +1,24 @@
+views:
+login page
+register page
+my blogs page
+all blogs page
+blog page with comment section
+
+routes:
+/
+/login
+/register
+/home
+/blog/{id}
+/blogs
+
+
+database:
+session
+users
+blogs
+comments
+
+.env:
+database environment vars
