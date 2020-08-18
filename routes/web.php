@@ -15,10 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::get('/blogs', 'BlogPopulateController@show');
+Route::view('/create_blog', 'blog_form');
 
-Route::get('/blog/{id}', 'BlogController@show');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/blogs', 'BlogPopulateController@show');
+
+Route::get('/blog/{id}', 'BlogController@show');
+
+Route::post('/create_blog', 'BlogController@create');
