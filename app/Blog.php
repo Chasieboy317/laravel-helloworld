@@ -11,5 +11,5 @@ class Blog extends Model
     'title' => 'title',
     'body' => 'body',
     'author' => 'author'
-  ]
+  ];
 }
