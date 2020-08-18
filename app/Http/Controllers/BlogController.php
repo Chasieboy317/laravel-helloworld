@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Comment;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
   public function show($id) {
-    return "blog here with id: $id";
+    $blog = Blog::where('id', '=', $id)->get();
+    $comments = Comment::where('blog_id', '=', $id)->orderBy('created_at', 'desc')->get();
+    return view('blog', ['blog' => $blog, 'comments' => $blog]);
   }
 
   public function create(Request $request) {

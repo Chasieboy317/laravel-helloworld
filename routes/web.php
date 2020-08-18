@@ -27,3 +27,5 @@ Route::get('/blogs', 'BlogPopulateController@show')->name('blogs');
 Route::get('/blog/{id}', 'BlogController@show');
 
 Route::post('/create_blog', 'BlogController@create')->name('create_blog')->middleware('auth');
+
+Route::post('/create_comment', 'CommentController@show')->name('create_comment')->middleware('auth');
