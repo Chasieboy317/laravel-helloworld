@@ -5,14 +5,14 @@
 @section('content')
 
 <h1>{{ $blog->title }}</h1>
-<h2>By {{ $blog->author }} at {{ $blog->created_at }}</h2>
-<h2>Last updated {{ $blog->updated_at }}</h2>
+<h4>By {{ $blog->author }} at {{ $blog->created_at }}</h2>
+<h6>Last updated {{ $blog->updated_at }}</h2>
 <p>{{ $blog->body }}</p>
 
 <hr>
 
 @if(Auth::user())
-  <form method="post" action="{{ routes('create_comment') }}">
+  <form method="post" action="{{ route('create_comment') }}">
     @csrf
     <div class="form-group">
       <textarea class="form-control" name="body" rows="1" placeholder="Say something about this blog" required></textarea>
