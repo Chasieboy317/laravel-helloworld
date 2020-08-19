@@ -24,7 +24,7 @@ class BlogController extends Controller
     return view('blog', ['blog' => $blog, 'comments' => $comments]);
   }
 
-  public function showEdit(Request $request) {
+  public function edit(Request $request) {
     $blog = Blog::where('blog_id', $request->query('blog_id'))->where('author', $request->user()->name)->first();
 
     return view('blog_form', ['editing' => true, 'blog' => $blog]);

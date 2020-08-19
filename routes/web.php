@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'BlogPopulateController@show')->name('blogs');
 
-Route::view('/create_blog', 'blog_form')->name('create_blog')->middleware('auth');
+Route::view('/create_blog', 'blog_form', ['editing' => false])->name('create_blog')->middleware('auth');
 
-Route::view('/edit_blog', 'BlogContoller@showEdit')->name('edit_blog')->middleware('auth');
+Route::view('/edit_blog', 'BlogContoller@edit')->name('edit_blog')->middleware('auth');
 
 Auth::routes();
 
