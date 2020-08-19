@@ -25,7 +25,7 @@ class BlogController extends Controller
   }
 
   public function edit(Request $request) {
-    $blog = Blog::where('id', $request->query('blog_id'))->where('author', $request->user()->name)->first();
+    $blog = Blog::where('id', $request->query('blog_id'))->where('author', $request->user()->name)->firstOrFail();
 
     return view('blog_form', ['editing' => true, 'blog' => $blog]);
   }
