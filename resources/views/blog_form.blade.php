@@ -8,6 +8,7 @@
 <form method="post" action="{{ route('edit_blog') }}">
   @method('PUT')
   @csrf
+  <input name="blog_id" type="hidden" value="{{ $blog->id }}">
   <div class="form-group">
     <label>Title</label>
     <input name="title" type="text" value="{{ $blog->title }}" readonly>
