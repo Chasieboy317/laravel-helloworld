@@ -12,8 +12,6 @@ class BlogController extends Controller
   public function show($id) {
     $blog = Blog::where('id', '=', $id)->first();
     $comments = Comment::where('blog_id', '=', $id)->orderBy('created_at', 'desc')->get();
-    Log::debug($comments[0]);
-    Log::debug($blog);
     return view('blog', ['blog' => $blog, 'comments' => $comments]);
   }
 

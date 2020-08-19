@@ -26,8 +26,8 @@
 @foreach($comments as $comment)
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">{{ $comment->author }}</h4>
-      <h5 class="card-subtitle">{{ $comment->created_at }}</h5>
+      <h6 class="card-title">{{ $comment->author }}</h4>
+      <h7 class="card-subtitle">{{ $comment->created_at }}</h5>
       <p class="card-text">{{ $comment->body }}</p>
     </div>
   </div>
