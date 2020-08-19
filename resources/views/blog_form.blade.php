@@ -6,7 +6,7 @@
 
 @if($editing)
 <form method="post" action="{{ route('edit_blog') }}">
-  @method('PUT');
+  @method('PUT')
   @csrf
   <div class="form-group">
     <label>Title</label>
@@ -14,7 +14,7 @@
   </div>
   <div class="form-group">
     <label>Body</label>
-    <textarea name="body" rows="6" value="{{ $blog->body }}" class="form-control" required></textarea>
+    <textarea name="body" rows="6" class="form-control" required>{{ $blog->body }}</textarea>
   </div>
   <button type="submit" class="btn btn-primary">Save changes</button>
 </form>
