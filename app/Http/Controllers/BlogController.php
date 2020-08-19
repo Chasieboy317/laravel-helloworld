@@ -11,7 +11,7 @@ class BlogController extends Controller
   public function update(Request $request) {
     $blog_id = $request->input('blog_id');
 
-    $blog = Blog::where('blog_id', $blog_id)->where('author', $request->user()->name)->first();
+    $blog = Blog::where('id', $blog_id)->where('author', $request->user()->name)->first();
     $blog->body = $request->input('body');
     $blog->save();
 
