@@ -13,19 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'BlogPopulateController@show')->name('blogs');
 
 Route::view('/create_blog', 'blog_form')->name('create_blog')->middleware('auth');
 
+Route::view('/edit_blog', 'BlogContoller@showEdit')->name('edit_blog')->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/blogs', 'BlogPopulateController@show')->name('blogs');
-
 Route::get('/blog/{id}', 'BlogController@show');
 
 Route::post('/create_blog', 'BlogController@create')->name('create_blog')->middleware('auth');
+
+Route::put('/edit_blog', 'BlogController@update')->name('edit_blog')->middleware('auth');
 
 Route::post('/create_comment', 'CommentController@show')->name('create_comment')->middleware('auth');

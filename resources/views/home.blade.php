@@ -13,7 +13,8 @@
   <div class="card">
       <div class="card-body">
         <h4 class="card-title"><a href="/blog/{{ $blog->id }}">{{ $blog->title }}</a></h4>
-        <p class="card-text">{{ $blog->body }}</p>
+        <p class="card-text">{{ substr($blog->body, 0, 32).'...' }}</p>
+        <a href="edit_blog?blog_id={{ $blog->id }}" class="btn btn-primary">Edit blog</a>
       </div>
   </div>
 @endforeach
