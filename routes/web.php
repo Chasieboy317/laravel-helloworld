@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/blog/{id}', 'BlogController@show');
 
-Route::get('/edit_blog', 'BlogContoller@edit')->name('edit_blog')->middleware('auth');
+Route::get('/edit_blog', 'BlogController@edit')->name('edit_blog')->middleware('auth');
 
 Route::post('/create_blog', 'BlogController@create')->name('create_blog')->middleware('auth');
 
