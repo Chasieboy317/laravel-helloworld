@@ -13,17 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'BlogPopulateController@show')->name('blogs');
 
 Route::view('/create_blog', 'blog_form', ['editing' => false])->name('create_blog')->middleware('auth');
 
-Route::view('/edit_blog', 'BlogContoller@edit')->name('edit_blog')->middleware('auth');
-
 Auth::routes();
+
+Route::get('/', 'BlogPopulateController@show')->name('blogs');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/blog/{id}', 'BlogController@show');
+
+Route::get('/edit_blog', 'BlogContoller@edit')->name('edit_blog')->middleware('auth');
 
 Route::post('/create_blog', 'BlogController@create')->name('create_blog')->middleware('auth');
 
