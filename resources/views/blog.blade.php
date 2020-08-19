@@ -11,7 +11,7 @@
 
 <hr>
 
-@if(Auth::user())
+@auth
   <form method="post" action="{{ route('create_comment') }}">
     @csrf
     <div class="form-group">
@@ -20,7 +20,7 @@
     <input type="hidden" name="blog_id" value="{{ $blog->id }}">
     <button class="btn btn-primary" type="submit">Comment</button>
   </form>
-@endif
+@endauth
 
 @if($comments)
 @foreach($comments as $comment)
