@@ -11,7 +11,7 @@ class CommentController extends Controller
     $blog_id = $request->input('blog_id');
     $author = $request->user()->name;
     $body = $request->input('body');
-    Comment::insert(['blog_id' => $blog_id, 'author' => $author, 'body' => $body]);
+    Comment::create(['blog_id' => $blog_id, 'author' => $author, 'body' => $body]);
 
     return redirect("/blog/$blog_id");
   }
